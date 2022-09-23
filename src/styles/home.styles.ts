@@ -1,23 +1,56 @@
 import styled from "styled-components";
 import { flavor } from "../flavors";
-import { lgMediaMin, lgMin, mdMediaMin, mdMin } from "../utils/screenSize";
-
+import {
+  lgMediaMin,
+  lgMin,
+  mdMediaMin,
+  mdMin,
+  xlMediaMin,
+} from "../utils/screenSize";
+const showColors = false;
 export const Container = styled.div`
   header {
     margin-top: 1rem;
   }
-  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+
+  background-color: ${(props) => {
+    if (showColors) {
+      return "red";
+    }
+    return "";
+  }};
   @media (${mdMediaMin}) {
-    /* background-color: blue; */
+    background-color: ${(props) => {
+      if (showColors) {
+        return "blue";
+      }
+      return "";
+    }};
   }
   @media (${lgMediaMin}) {
-    /* background-color: green; */
+    background-color: ${(props) => {
+      if (showColors) {
+        return "green";
+      }
+      return "";
+    }};
   }
 `;
 
 export const Content = styled.div`
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
+  width: 90%;
+
+  @media (${mdMediaMin}) {
+    width: 80%;
+  }
+  @media (${lgMediaMin}) {
+    width: 70%;
+  }
+  @media (${xlMediaMin}) {
+    width: 50%;
+  }
 `;
 
 export const Welcome = styled.div`
@@ -89,6 +122,7 @@ export const AboutInfos = styled.div`
   div {
     display: flex;
     width: 20rem;
+
     p {
       font-family: "Poppins", Arial;
       font-weight: 400;
@@ -99,6 +133,9 @@ export const AboutInfos = styled.div`
         /* background-color: green; */
         width: 50%;
       }
+    }
+    button {
+      width: 50%;
     }
   }
 `;

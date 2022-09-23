@@ -31,6 +31,11 @@ export const MenuList = styled.div`
       p {
         font-family: "Poppins", Arial;
       }
+      a {
+        color: white;
+        text-decoration: none;
+        font-family: "Poppins", Arial;
+      }
     }
   }
 `;

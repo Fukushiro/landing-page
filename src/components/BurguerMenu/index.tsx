@@ -5,6 +5,7 @@ import { Touchable } from "../Touchable";
 export interface BurguerMenuAction {
   title: string;
   action: () => void;
+  targetRoute: string;
 }
 
 interface BurguerMenuProps {

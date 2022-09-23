@@ -5,6 +5,7 @@ import { smMax } from "../../utils/screenSize";
 import { BurguerMenu, BurguerMenuAction } from "../BurguerMenu";
 import { Touchable } from "../Touchable";
 import Router from "next/router";
+import Link from "next/link";
 
 export function Header() {
   // media queries
@@ -18,13 +19,15 @@ export function Header() {
       action: () => {
         Router.push("/");
       },
+      targetRoute: "/",
     },
-    { title: "About", action: () => {} },
+    { title: "About", action: () => {}, targetRoute: "/" },
     {
-      title: "Service",
+      title: "Projects",
       action: () => {
         Router.push("/projects");
       },
+      targetRoute: "/projects",
     },
   ];
   return (
@@ -38,9 +41,11 @@ export function Header() {
           <ul>
             {burguerMenuActions.map((value, index) => (
               <li key={index}>
-                <Touchable onClick={value.action}>
-                  <p>{value.title}</p>
-                </Touchable>
+                {/* <Touchable onClick={value.action}> */}
+                <Link href={value.targetRoute}>
+                  <a href="">{value.title}</a>
+                </Link>
+                {/* </Touchable> */}
               </li>
             ))}
           </ul>

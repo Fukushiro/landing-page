@@ -12,4 +12,6 @@ export const lgMediaMin = `min-width: ${lgMin}px`;
 
 export const xlMin = 1280;
 
+export const xlMediaMin = `min-width: ${xlMin}px`;
+
 export const xl2Min = 1536;

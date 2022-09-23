@@ -2,12 +2,14 @@ import Head from "next/head";
 import Image from "next/image";
 import { Header } from "../components/Header";
 import * as Styles from "../styles/home.styles";
+import * as Global from "../styles/global.styles";
 import { FaLinkedinIn } from "react-icons/fa";
 import Link from "next/link";
+import { Touchable } from "../components/Touchable";
 export default function Home() {
   return (
     <Styles.Container>
-      <Styles.Content>
+      <Global.Content>
         <Header />
 
         <Styles.Welcome>
@@ -15,9 +17,9 @@ export default function Home() {
           <h2>I am a Front end developer</h2>
 
           <p>
-            Im a front end developer with 2 years of experience. I can create
-            websites with react using next, and make mobile apps with react
-            native, and much more...
+            {"I'm"} a front end developer with 2 years of experience. I can
+            create websites with react using next, and make mobile apps with
+            react native, and much more...
           </p>
 
           <ul>
@@ -50,7 +52,7 @@ export default function Home() {
         <Styles.AboutInfos>
           <div>
             <p>Name</p>
-            <p>:Joao Pedro</p>
+            <p>:João Pedro</p>
           </div>
           <div>
             <p>Age</p>
@@ -66,10 +68,16 @@ export default function Home() {
           </div>
           <div>
             <p>Email</p>
-            <p>:jpflc2301@gmail.com</p>
+            <Touchable
+              onClick={() => {
+                navigator.clipboard.writeText("jpflc2301@gmail.com");
+              }}
+            >
+              <p>:jpflc2301@gmail.com</p>
+            </Touchable>
           </div>
         </Styles.AboutInfos>
-      </Styles.Content>
+      </Global.Content>
     </Styles.Container>
   );
 }

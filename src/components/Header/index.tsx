@@ -3,6 +3,7 @@ import Hamburger from "hamburger-react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { smMax } from "../../utils/screenSize";
 import { BurguerMenu, BurguerMenuAction } from "../BurguerMenu";
+import { Touchable } from "../Touchable";
 
 export function Header() {
   // media queries
@@ -22,16 +23,17 @@ export function Header() {
       {isSmall ? (
         <BurguerMenu itens={burguerMenuActions} />
       ) : (
-        <div>
+        <Styles.MenuList>
           <ul>
-            <li>HOME</li>
-            <li>HOME</li>
-            <li>HOME</li>
-            <li>HOME</li>
-            <li>HOME</li>
-            <li>HOME</li>
+            {burguerMenuActions.map((value, index) => (
+              <li key={index}>
+                <Touchable onClick={value.action}>
+                  <p>{value.title}</p>
+                </Touchable>
+              </li>
+            ))}
           </ul>
-        </div>
+        </Styles.MenuList>
       )}
     </Styles.Container>
   );

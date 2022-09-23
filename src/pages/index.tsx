@@ -14,7 +14,7 @@ export default function Home() {
           <h2>I am a Front end developer</h2>
 
           <p>
-            I'm a front end developer with 2 years of experience. I can create
+            Im a front end developer with 2 years of experience. I can create
             websites with react using next, and make mobile apps with react
             native, and much more...
           </p>

@@ -39,6 +39,9 @@ export const Welcome = styled.div`
   }
   p {
     line-height: 1.5rem;
+    font-family: "Poppins", Arial;
+    font-weight: 400;
+    font-size: ${flavor.font.fontSize.sm};
   }
   ul {
     list-style: none;
@@ -72,5 +75,30 @@ export const About = styled.div`
   }
   p {
     line-height: 1.5rem;
+    font-family: "Poppins", Arial;
+    font-weight: 400;
+    font-size: ${flavor.font.fontSize.sm};
+  }
+`;
+
+export const AboutInfos = styled.div`
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  div {
+    display: flex;
+    width: 20rem;
+    p {
+      font-family: "Poppins", Arial;
+      font-weight: 400;
+      font-size: ${flavor.font.fontSize.sm};
+      /* background-color: blue; */
+      width: 50%;
+      &:first-child {
+        /* background-color: green; */
+        width: 50%;
+      }
+    }
   }
 `;

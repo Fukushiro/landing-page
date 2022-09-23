@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Header } from "../components/Header";
 import * as Styles from "../styles/home.styles";
 import { FaLinkedinIn } from "react-icons/fa";
+import Link from "next/link";
 export default function Home() {
   return (
     <Styles.Container>
@@ -21,7 +22,10 @@ export default function Home() {
 
           <ul>
             <li>
-              <a href="">
+              <a
+                href="https://www.linkedin.com/in/jo%C3%A3o-pedro-fukushiro-lima-castro-4867091ba/"
+                target="blank"
+              >
                 <div>
                   <FaLinkedinIn size={20} />
                 </div>
@@ -43,6 +47,28 @@ export default function Home() {
             consectetur quam.
           </p>
         </Styles.About>
+        <Styles.AboutInfos>
+          <div>
+            <p>Name</p>
+            <p>:Joao Pedro</p>
+          </div>
+          <div>
+            <p>Age</p>
+            <p>:22</p>
+          </div>
+          <div>
+            <p>Address</p>
+            <p>:Rua salvador cirilo sales, Itajuba</p>
+          </div>
+          <div>
+            <p>Phone number</p>
+            <p>:+55 32998360917</p>
+          </div>
+          <div>
+            <p>Email</p>
+            <p>:jpflc2301@gmail.com</p>
+          </div>
+        </Styles.AboutInfos>
       </Styles.Content>
     </Styles.Container>
   );

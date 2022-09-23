@@ -4,6 +4,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { smMax } from "../../utils/screenSize";
 import { BurguerMenu, BurguerMenuAction } from "../BurguerMenu";
 import { Touchable } from "../Touchable";
+import Router from "next/router";
 
 export function Header() {
   // media queries
@@ -12,9 +13,19 @@ export function Header() {
   //
 
   const burguerMenuActions: BurguerMenuAction[] = [
-    { title: "Home", action: () => {} },
+    {
+      title: "Home",
+      action: () => {
+        Router.push("/");
+      },
+    },
     { title: "About", action: () => {} },
-    { title: "Service", action: () => {} },
+    {
+      title: "Service",
+      action: () => {
+        Router.push("/projects");
+      },
+    },
   ];
   return (
     <Styles.Container>

@@ -30,16 +30,9 @@ export const Content = styled.div`
         a {
           text-align: start;
           font-family: "Poppins", Arial;
-        }
-      }
-
-      button {
-        width: 100%;
-        height: 100%;
-        /* background-color: blue; */
-        p {
-          text-align: start;
-          font-family: "Poppins", Arial;
+          text-decoration: none;
+          color: white;
+          display: block;
         }
       }
     }

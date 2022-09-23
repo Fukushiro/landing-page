@@ -2,6 +2,7 @@ import { useState } from "react";
 import * as Styles from "./styles";
 import Hamburger from "hamburger-react";
 import { Touchable } from "../Touchable";
+import Link from "next/link";
 export interface BurguerMenuAction {
   title: string;
   action: () => void;
@@ -24,9 +25,11 @@ export function BurguerMenu(props: BurguerMenuProps) {
           <ul>
             {props.itens.map((value, index) => (
               <li key={index}>
-                <Touchable onClick={value.action}>
-                  <p>{value.title}</p>
-                </Touchable>
+                <div>
+                  <Link href={value.targetRoute}>
+                    <a href="">{value.title}</a>
+                  </Link>
+                </div>
               </li>
             ))}
           </ul>

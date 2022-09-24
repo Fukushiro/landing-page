@@ -27,6 +27,7 @@ export default function Home() {
               <a
                 href="https://www.linkedin.com/in/jo%C3%A3o-pedro-fukushiro-lima-castro-4867091ba/"
                 target="blank"
+                rel="noopener noreferrer"
               >
                 <div>
                   <FaLinkedinIn size={20} />
@@ -35,20 +36,20 @@ export default function Home() {
             </li>
           </ul>
         </Styles.Welcome>
-
+        {/* 
         <Styles.About>
           <h1>Hello, I am João Pedro Fukushiro</h1>
 
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-            tellus est, finibus ut congue sed, faucibus ut dui. Sed congue nisl
-            dolor, id dapibus leo elementum posuere. Ut aliquam metus quis
-            laoreet elementum. In hac habitasse platea dictumst. In hac
-            habitasse platea dictumst. Aliquam porta faucibus arcu, et consequat
-            velit vestibulum in. Donec quis tellus ut urna volutpat posuere quis
-            consectetur quam.
+            I live on itajuba, in Minas Gerais, i made Lorem ipsum dolor sit
+            amet, consectetur adipiscing elit. Integer tellus est, finibus ut
+            congue sed, faucibus ut dui. Sed congue nisl dolor, id dapibus leo
+            elementum posuere. Ut aliquam metus quis laoreet elementum. In hac
+            habitasse platea dictumst. In hac habitasse platea dictumst. Aliquam
+            porta faucibus arcu, et consequat velit vestibulum in. Donec quis
+            tellus ut urna volutpat posuere quis consectetur quam.
           </p>
-        </Styles.About>
+        </Styles.About> */}
         <Styles.AboutInfos>
           <div>
             <p>Name</p>
@@ -58,10 +59,10 @@ export default function Home() {
             <p>Age</p>
             <p>:22</p>
           </div>
-          <div>
+          {/* <div>
             <p>Address</p>
             <p>:Rua salvador cirilo sales, Itajuba</p>
-          </div>
+          </div> */}
           <div>
             <p>Phone number</p>
             <p>:+55 32998360917</p>

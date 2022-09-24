@@ -1,6 +1,6 @@
 import axios from "axios";
 import { RepoData } from "../../../types/repo";
-import { github } from "./githubAPi";
+import { github } from "./githubApi";
 export async function getRepoByNameService(user: string, name: string) {
   try {
     const RESPONSE = await github.get(`repos/${user}/${name}`);

@@ -21,7 +21,7 @@ export function Header() {
       },
       targetRoute: "/",
     },
-    { title: "About", action: () => {}, targetRoute: "/" },
+    // { title: "About", action: () => {}, targetRoute: "/" },
     {
       title: "Projects",
       action: () => {

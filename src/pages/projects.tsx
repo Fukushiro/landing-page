@@ -3,9 +3,13 @@ import * as Styles from "../styles/projects.styles";
 import * as Global from "../styles/global.styles";
 import Head from "next/head";
 import { useEffect } from "react";
-import { getRepoByNameService } from "../components/services/github/repo";
+import {
+  getAllRepos,
+  getRepoByNameService,
+} from "../components/services/github/repo";
 import { GetStaticProps } from "next";
 import { RepoData } from "../types/repo";
+import { RepoCard } from "../components/RepoCard";
 interface Props {
   repos: RepoData[];
 }
@@ -25,9 +29,11 @@ export default function Projects(props: Props) {
         <Global.Content>
           <Header />
 
-          {props.repos.map((value) => {
-            return <p key={value.id}>{value.name}</p>;
-          })}
+          <Styles.ProjectsList>
+            {props.repos.map((value) => {
+              return <RepoCard repo={value} key={value.id} />;
+            })}
+          </Styles.ProjectsList>
         </Global.Content>
       </Styles.Container>
     </>
@@ -35,21 +41,30 @@ export default function Projects(props: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const repos: RepoData[] = [];
-  const wantedRepos: string[] = ["landing-page"];
+  let repos: RepoData[] = [];
+  // const wantedRepos: string[] = [
+  //   "landing-page",
+  //   "tasks",
+  //   "nlw-esports-web",
+  //   "nlw-esports-mobile",
+  //   "nlw-esports-server",
+  // ];
 
-  for (const rep in wantedRepos) {
-    const { data, worked } = await getRepoByNameService(
-      "Fukushiro",
-      wantedRepos[rep]
-    );
+  // for (const rep in wantedRepos) {
+  //   const { data, worked } = await getRepoByNameService(
+  //     "Fukushiro",
+  //     wantedRepos[rep]
+  //   );
 
-    if (worked) {
-      // console.log(data);
-      repos.push(data);
-    }
+  //   if (worked) {
+  //     // console.log(data);
+  //     repos.push(data);
+  //   }
+  // }
+  const { data, worked } = await getAllRepos("Fukushiro");
+  if (worked) {
+    repos = data;
   }
-
   return {
     props: {
       repos: repos,

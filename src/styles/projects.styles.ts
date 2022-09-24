@@ -26,3 +26,11 @@ export const Content = styled.div`
     width: 50%;
   }
 `;
+
+export const ProjectsList = styled.div`
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+`;

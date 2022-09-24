@@ -5,4 +5,5 @@ export interface RepoData {
   owner: {};
   html_url: string;
   created_at: string;
+  language: string;
 }

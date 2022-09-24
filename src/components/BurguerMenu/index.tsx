@@ -7,6 +7,7 @@ export interface BurguerMenuAction {
   title: string;
   action: () => void;
   targetRoute: string;
+  prefetch?: boolean;
 }
 
 interface BurguerMenuProps {

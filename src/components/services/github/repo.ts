@@ -16,3 +16,19 @@ export async function getRepoByNameService(user: string, name: string) {
     };
   }
 }
+
+export async function getAllRepos(user: string) {
+  try {
+    const RESPONSE = await github.get(`users/${user}/repos`);
+
+    return {
+      worked: true,
+      data: RESPONSE.data as RepoData[],
+    };
+  } catch (e) {
+    return {
+      worked: false,
+      data: null,
+    };
+  }
+}

@@ -10,6 +10,7 @@ import programingAnimation from "../assets/animations/programing.json";
 import Lottie from "react-lottie";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { lgMediaMin, mdMediaMin, smMediaMin } from "../utils/screenSize";
+import { strings } from "../strings";
 export default function Home() {
   const isSmall = useMediaQuery(`(${smMediaMin})`);
   const isMedian = useMediaQuery(`(${mdMediaMin})`);
@@ -18,60 +19,64 @@ export default function Home() {
   const animationWidth = isLarge ? 500 : isMedian ? 400 : 300;
   const animationHeight = isLarge ? 400 : isMedian ? 300 : 200;
   return (
-    <Styles.Container>
-      <Global.Content>
-        <Header />
+    <>
+      <Head>
+        <title>Portfolio - home</title>
+      </Head>
+      <Styles.Container>
+        <Global.Content>
+          <Header />
 
-        <Styles.Welcome>
-          <h1>WELCOME!</h1>
-          <h2>I am a Front end developer</h2>
-          <Styles.WelcomeDiv>
-            <div>
-              <p>
-                {"I'm"} a front end developer with 2 years of experience. I know
-                how to:
-              </p>
+          <Styles.Welcome>
+            <h1>{strings.bem_vindo}</h1>
+            <h2>{strings.introduction_1}</h2>
+            <Styles.WelcomeDiv>
+              <div>
+                <p>{strings.introduction_2}</p>
 
-              <ul>
-                <li>Develop mobile apps with react native</li>
-                <li>Develop web apps with react.js, next, vite, and more</li>
-                <li>Manage state with redux, context and zustand</li>
-                <li>Make api calls with fetch and axios</li>
-                <li>Storage data with firebase and fauna</li>
-                <li>Use typescript</li>
-                <li>Publish apps for both, android and ios</li>
-              </ul>
-            </div>
+                <ul>
+                  {/* <li>Develop mobile apps with react native</li>
+                  <li>Develop web apps with react.js, next, vite, and more</li>
+                  <li>Manage state with redux, context and zustand</li>
+                  <li>Make api calls with fetch and axios</li>
+                  <li>Storage data with firebase and fauna</li>
+                  <li>Use typescript</li>
+                  <li>Publish apps for both, android and ios</li> */}
+                  {strings.introduction_3.map((value, index) => (
+                    <li key={index}>{value}</li>
+                  ))}
+                </ul>
+              </div>
 
-            <Lottie
-              options={{
-                loop: true,
-                autoplay: true,
-                animationData: programingAnimation,
-                rendererSettings: {
-                  preserveAspectRatio: "xMidYMid slice",
-                },
-              }}
-              height={animationHeight}
-              width={animationWidth}
-            />
-          </Styles.WelcomeDiv>
+              <Lottie
+                options={{
+                  loop: true,
+                  autoplay: true,
+                  animationData: programingAnimation,
+                  rendererSettings: {
+                    preserveAspectRatio: "xMidYMid slice",
+                  },
+                }}
+                height={animationHeight}
+                width={animationWidth}
+              />
+            </Styles.WelcomeDiv>
 
-          <ul>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/jo%C3%A3o-pedro-fukushiro-lima-castro-4867091ba/"
-                target="blank"
-                rel="noopener noreferrer"
-              >
-                <div>
-                  <FaLinkedinIn size={20} />
-                </div>
-              </a>
-            </li>
-          </ul>
-        </Styles.Welcome>
-        {/* 
+            <ul>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/jo%C3%A3o-pedro-fukushiro-lima-castro-4867091ba/"
+                  target="blank"
+                  rel="noopener noreferrer"
+                >
+                  <div>
+                    <FaLinkedinIn size={20} />
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </Styles.Welcome>
+          {/* 
         <Styles.About>
           <h1>Hello, I am João Pedro Fukushiro</h1>
 
@@ -85,35 +90,36 @@ export default function Home() {
             tellus ut urna volutpat posuere quis consectetur quam.
           </p>
         </Styles.About> */}
-        <Styles.AboutInfos>
-          <div>
-            <p>Name</p>
-            <p>:João Pedro</p>
-          </div>
-          <div>
-            <p>Age</p>
-            <p>:22</p>
-          </div>
-          {/* <div>
+          <Styles.AboutInfos>
+            <div>
+              <p>Name</p>
+              <p>:João Pedro</p>
+            </div>
+            <div>
+              <p>Age</p>
+              <p>:22</p>
+            </div>
+            {/* <div>
             <p>Address</p>
             <p>:Rua salvador cirilo sales, Itajuba</p>
           </div> */}
-          <div>
-            <p>Phone number</p>
-            <p>:+55 32998360917</p>
-          </div>
-          <div>
-            <p>Email</p>
-            <Touchable
-              onClick={() => {
-                navigator.clipboard.writeText("jpflc2301@gmail.com");
-              }}
-            >
-              <p>:jpflc2301@gmail.com</p>
-            </Touchable>
-          </div>
-        </Styles.AboutInfos>
-      </Global.Content>
-    </Styles.Container>
+            <div>
+              <p>Phone number</p>
+              <p>:+55 32998360917</p>
+            </div>
+            <div>
+              <p>Email</p>
+              <Touchable
+                onClick={() => {
+                  navigator.clipboard.writeText("jpflc2301@gmail.com");
+                }}
+              >
+                <p>:jpflc2301@gmail.com</p>
+              </Touchable>
+            </div>
+          </Styles.AboutInfos>
+        </Global.Content>
+      </Styles.Container>
+    </>
   );
 }

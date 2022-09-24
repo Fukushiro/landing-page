@@ -1,4 +1,5 @@
 export const smMin = 640;
+export const smMediaMin = `min-width: ${smMin}px`;
 
 export const smMax = 767;
 

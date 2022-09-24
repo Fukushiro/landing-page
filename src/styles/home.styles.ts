@@ -70,12 +70,14 @@ export const Welcome = styled.div`
 
     font-size: ${flavor.font.fontSize.sm};
   }
+
   p {
     line-height: 1.5rem;
     font-family: "Poppins", Arial;
     font-weight: 400;
     font-size: ${flavor.font.fontSize.sm};
   }
+
   ul {
     list-style: none;
     margin-top: 0.5rem;
@@ -96,6 +98,24 @@ export const Welcome = styled.div`
         align-items: center;
       }
     }
+  }
+`;
+
+export const WelcomeDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* background-color: red; */
+  flex-direction: column;
+
+  ul {
+    li {
+    }
+  }
+  @media (${mdMediaMin}) {
+    /* flex-direction: row; */
+  }
+  @media (${lgMediaMin}) {
   }
 `;
 

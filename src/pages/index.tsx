@@ -6,7 +6,17 @@ import * as Global from "../styles/global.styles";
 import { FaLinkedinIn } from "react-icons/fa";
 import Link from "next/link";
 import { Touchable } from "../components/Touchable";
+import programingAnimation from "../assets/animations/programing.json";
+import Lottie from "react-lottie";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { lgMediaMin, mdMediaMin, smMediaMin } from "../utils/screenSize";
 export default function Home() {
+  const isSmall = useMediaQuery(`(${smMediaMin})`);
+  const isMedian = useMediaQuery(`(${mdMediaMin})`);
+  const isLarge = useMediaQuery(`(${lgMediaMin})`);
+  console.log(isSmall, isMedian, isLarge);
+  const animationWidth = isLarge ? 500 : isMedian ? 400 : 300;
+  const animationHeight = isLarge ? 400 : isMedian ? 300 : 200;
   return (
     <Styles.Container>
       <Global.Content>
@@ -15,12 +25,37 @@ export default function Home() {
         <Styles.Welcome>
           <h1>WELCOME!</h1>
           <h2>I am a Front end developer</h2>
+          <Styles.WelcomeDiv>
+            <div>
+              <p>
+                {"I'm"} a front end developer with 2 years of experience. I know
+                how to:
+              </p>
 
-          <p>
-            {"I'm"} a front end developer with 2 years of experience. I can
-            create websites with react using next, and make mobile apps with
-            react native, and much more...
-          </p>
+              <ul>
+                <li>Develop mobile apps with react native</li>
+                <li>Develop web apps with react.js, next, vite, and more</li>
+                <li>Manage state with redux, context and zustand</li>
+                <li>Make api calls with fetch and axios</li>
+                <li>Storage data with firebase and fauna</li>
+                <li>Use typescript</li>
+                <li>Publish apps for both, android and ios</li>
+              </ul>
+            </div>
+
+            <Lottie
+              options={{
+                loop: true,
+                autoplay: true,
+                animationData: programingAnimation,
+                rendererSettings: {
+                  preserveAspectRatio: "xMidYMid slice",
+                },
+              }}
+              height={animationHeight}
+              width={animationWidth}
+            />
+          </Styles.WelcomeDiv>
 
           <ul>
             <li>

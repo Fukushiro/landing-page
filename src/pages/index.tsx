@@ -93,11 +93,11 @@ export default function Home() {
           <Styles.AboutInfos>
             <div>
               <p>Name</p>
-              <p>:João Pedro</p>
+              <p>João Pedro</p>
             </div>
             <div>
               <p>Age</p>
-              <p>:22</p>
+              <p>22</p>
             </div>
             {/* <div>
             <p>Address</p>
@@ -105,7 +105,7 @@ export default function Home() {
           </div> */}
             <div>
               <p>Phone number</p>
-              <p>:+55 32998360917</p>
+              <p>+55 32998360917</p>
             </div>
             <div>
               <p>Email</p>
@@ -114,7 +114,7 @@ export default function Home() {
                   navigator.clipboard.writeText("jpflc2301@gmail.com");
                 }}
               >
-                <p>:jpflc2301@gmail.com</p>
+                <p>jpflc2301@gmail.com</p>
               </Touchable>
             </div>
           </Styles.AboutInfos>

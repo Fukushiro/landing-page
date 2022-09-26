@@ -19,7 +19,6 @@ export function RepoCard({ repo }: Props) {
     JavaScript: IoLogoJavascript,
     unknown: AiFillFileUnknown,
   };
-  console.log(repo.language);
 
   const CurrentIcon =
     repo.language in Icons ? Icons[repo.language] : Icons.unknown;

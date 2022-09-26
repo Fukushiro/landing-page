@@ -15,7 +15,6 @@ export default function Home() {
   const isSmall = useMediaQuery(`(${smMediaMin})`);
   const isMedian = useMediaQuery(`(${mdMediaMin})`);
   const isLarge = useMediaQuery(`(${lgMediaMin})`);
-  console.log(isSmall, isMedian, isLarge);
   const animationWidth = isLarge ? 500 : isMedian ? 400 : 300;
   const animationHeight = isLarge ? 400 : isMedian ? 300 : 200;
   return (

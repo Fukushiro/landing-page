@@ -18,7 +18,6 @@ export default function Projects(props: Props) {
     async function actions() {}
     actions();
   }, []);
-  console.log(props.repos);
 
   return (
     <>

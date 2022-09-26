@@ -25,7 +25,7 @@ export default function Projects(props: Props) {
         <title>Portfolio - projects</title>
       </Head>
       <Styles.Container>
-        <Global.Content>
+        <Styles.Content>
           <Header />
 
           <Styles.ProjectsList>
@@ -33,7 +33,7 @@ export default function Projects(props: Props) {
               return <RepoCard repo={value} key={value.id} />;
             })}
           </Styles.ProjectsList>
-        </Global.Content>
+        </Styles.Content>
       </Styles.Container>
     </>
   );

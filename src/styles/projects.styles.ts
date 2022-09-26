@@ -15,7 +15,9 @@ export const Container = styled.div`
 `;
 export const Content = styled.div`
   width: 90%;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @media (${mdMediaMin}) {
     width: 80%;
   }
@@ -29,8 +31,19 @@ export const Content = styled.div`
 
 export const ProjectsList = styled.div`
   margin-top: 2rem;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;*/
   gap: 1rem;
+
+  display: grid;
+
+  @media (${mdMediaMin}) {
+    grid-template-columns: 15rem 15rem;
+  }
+  @media (${lgMediaMin}) {
+    grid-template-columns: 15rem 15rem 15rem;
+  }
+  @media (${xlMediaMin}) {
+  }
 `;

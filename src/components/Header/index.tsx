@@ -64,6 +64,8 @@ export function Header() {
       </button> */}
       <Switch
         checked={isChecked}
+        checkedIcon={false}
+        uncheckedIcon={false}
         onChange={() => {
           if (language === "pt") {
             dispatch(changeLanguage("en"));

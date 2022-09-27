@@ -66,6 +66,7 @@ export const Welcome = styled.div`
   h2 {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
+
     font-family: "Poppins", Arial;
 
     font-size: ${flavor.font.fontSize.sm};
@@ -110,6 +111,8 @@ export const WelcomeDiv = styled.div`
 
   ul {
     li {
+      font-size: ${flavor.font.fontSize.sm};
+      font-family: "Poppins", Arial;
     }
   }
   @media (${mdMediaMin}) {

@@ -10,13 +10,16 @@ import programingAnimation from "../assets/animations/programing.json";
 import Lottie from "react-lottie";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { lgMediaMin, mdMediaMin, smMediaMin } from "../utils/screenSize";
-import { strings } from "../strings";
+import { useState } from "react";
+import { useLanguage } from "../strings";
 export default function Home() {
   const isSmall = useMediaQuery(`(${smMediaMin})`);
   const isMedian = useMediaQuery(`(${mdMediaMin})`);
   const isLarge = useMediaQuery(`(${lgMediaMin})`);
   const animationWidth = isLarge ? 500 : isMedian ? 400 : 300;
   const animationHeight = isLarge ? 400 : isMedian ? 300 : 200;
+
+  const { strings } = useLanguage();
   return (
     <>
       <Head>

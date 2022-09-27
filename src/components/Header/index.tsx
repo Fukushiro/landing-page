@@ -6,12 +6,13 @@ import { BurguerMenu, BurguerMenuAction } from "../BurguerMenu";
 import { Touchable } from "../Touchable";
 import Router from "next/router";
 import Link from "next/link";
-import * as Switch from "@radix-ui/react-switch";
 import { useSelect } from "@mui/base";
 import { RootState } from "../../store/store";
 import { useDispatch, useSelector } from "react-redux";
 import { changeLanguage } from "../../store/slices/languageSlice";
 import { saveState } from "../../utils/save";
+import Switch from "react-switch";
+import { useEffect, useState } from "react";
 export function Header() {
   // redux
   const language = useSelector(
@@ -25,6 +26,12 @@ export function Header() {
   const isSmall = useMediaQuery(`(max-width: ${smMax}px)`);
 
   //
+  // useState
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+
+  useEffect(() => {
+    setIsChecked(language === "pt");
+  }, [language]);
 
   const burguerMenuActions: BurguerMenuAction[] = [
     {
@@ -48,13 +55,23 @@ export function Header() {
       <Styles.NameTitle>João Pedro Fukushiro</Styles.NameTitle>
 
       {/* language switch */}
-      <button
+      {/* <button
         onClick={() => {
           dispatch(changeLanguage("en"));
         }}
       >
         dsadsa
-      </button>
+      </button> */}
+      <Switch
+        checked={isChecked}
+        onChange={() => {
+          if (language === "pt") {
+            dispatch(changeLanguage("en"));
+          } else {
+            dispatch(changeLanguage("pt"));
+          }
+        }}
+      />
       {/* menu */}
       {isSmall ? (
         <BurguerMenu itens={burguerMenuActions} />

@@ -84,7 +84,7 @@ export function Header() {
               <li key={index}>
                 {/* <Touchable onClick={value.action}> */}
                 <Link href={value.targetRoute}>
-                  <a href="">{value.title}</a>
+                  <a>{value.title}</a>
                 </Link>
                 {/* </Touchable> */}
               </li>

@@ -66,6 +66,7 @@ export function Header() {
         checked={isChecked}
         checkedIcon={false}
         uncheckedIcon={false}
+        data-testid="language-switch"
         onChange={() => {
           if (language === "pt") {
             dispatch(changeLanguage("en"));

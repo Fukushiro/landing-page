@@ -1,7 +1,15 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Header } from "../components/Header";
-import * as Styles from "../styles/home.styles";
+import {
+  WelcomeSocialMedias,
+  About,
+  AboutInfos,
+  Container,
+  Content,
+  Welcome,
+  WelcomeDiv,
+} from "../styles/home.styles";
 import * as Global from "../styles/global.styles";
 import { FaLinkedinIn } from "react-icons/fa";
 import Link from "next/link";
@@ -25,14 +33,14 @@ export default function Home() {
       <Head>
         <title>Portfolio - home</title>
       </Head>
-      <Styles.Container>
+      <Container>
         <Global.Content>
           <Header />
 
-          <Styles.Welcome>
+          <Welcome>
             <h1>{strings.bem_vindo}</h1>
             <h2>{strings.introduction_1}</h2>
-            <Styles.WelcomeDiv>
+            <WelcomeDiv>
               <div>
                 <p>{strings.introduction_2}</p>
 
@@ -62,24 +70,36 @@ export default function Home() {
                 height={animationHeight}
                 width={animationWidth}
               />
-            </Styles.WelcomeDiv>
-
-            <ul>
-              <li>
-                <a
-                  href="https://www.linkedin.com/in/jo%C3%A3o-pedro-fukushiro-lima-castro-4867091ba/"
-                  target="blank"
-                  rel="noopener noreferrer"
-                >
-                  <div>
-                    <FaLinkedinIn size={20} />
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </Styles.Welcome>
+            </WelcomeDiv>
+            <WelcomeSocialMedias>
+              <ul>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/jo%C3%A3o-pedro-fukushiro-lima-castro-4867091ba/"
+                    target="blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div>
+                      <FaLinkedinIn size={20} />
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/jo%C3%A3o-pedro-fukushiro-lima-castro-4867091ba/"
+                    target="blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div>
+                      <FaLinkedinIn size={20} />
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </WelcomeSocialMedias>
+          </Welcome>
           {/* 
-        <Styles.About>
+        <About>
           <h1>Hello, I am João Pedro Fukushiro</h1>
 
           <p>
@@ -91,8 +111,8 @@ export default function Home() {
             porta faucibus arcu, et consequat velit vestibulum in. Donec quis
             tellus ut urna volutpat posuere quis consectetur quam.
           </p>
-        </Styles.About> */}
-          <Styles.AboutInfos>
+        </About> */}
+          <AboutInfos>
             <div>
               <p>Name</p>
               <p>João Pedro</p>
@@ -119,9 +139,9 @@ export default function Home() {
                 <p>jpflc2301@gmail.com</p>
               </Touchable>
             </div>
-          </Styles.AboutInfos>
+          </AboutInfos>
         </Global.Content>
-      </Styles.Container>
+      </Container>
     </>
   );
 }

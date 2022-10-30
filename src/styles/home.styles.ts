@@ -82,7 +82,6 @@ export const Welcome = styled.div`
   ul {
     list-style: none;
     margin-top: 0.5rem;
-
     li {
       a {
         text-decoration: none;
@@ -119,6 +118,31 @@ export const WelcomeDiv = styled.div`
     /* flex-direction: row; */
   }
   @media (${lgMediaMin}) {
+  }
+`;
+
+export const WelcomeSocialMedias = styled.div`
+  ul {
+    list-style: none;
+    margin-top: 0.5rem;
+    li {
+      display: inline-block;
+      margin-right: 0.5rem;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      div {
+        width: 1rem;
+        height: 1rem;
+        border: 1px solid white;
+        padding: 0.5rem;
+        border-radius: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
   }
 `;
 

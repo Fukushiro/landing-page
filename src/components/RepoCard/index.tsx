@@ -31,7 +31,7 @@ export function RepoCard({ repo }: Props) {
             <CurrentIcon size={20} color="white" />
           </div>
           <p>{repo.name}</p>
-          <p>Created at: {format(new Date(), "yyyy-MM-dd")}</p>
+          <p>Created at: {format(new Date(repo.created_at), "yyyy-MM-dd")}</p>
         </Styles.Container>
       </a>
     </Link>

@@ -31,7 +31,10 @@ export default function Projects(props: Props) {
           <Styles.ProjectsList>
             {props.repos
               .sort((a, b) => {
-                return new Date(b.created_at) - new Date(a.created_at);
+                return (
+                  new Date(b.created_at).getTime() -
+                  new Date(a.created_at).getTime()
+                );
               })
               .map((value) => {
                 return <RepoCard repo={value} key={value.id} />;

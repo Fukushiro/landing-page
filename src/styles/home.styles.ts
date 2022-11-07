@@ -122,6 +122,7 @@ export const WelcomeDiv = styled.div`
 `;
 
 export const WelcomeSocialMedias = styled.div`
+  display: flex;
   ul {
     list-style: none;
     margin-top: 0.5rem;

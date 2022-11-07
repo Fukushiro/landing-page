@@ -3,6 +3,11 @@ export interface StringsData {
   introduction_1: string;
   introduction_2: string;
   introduction_3: string[];
+  data_name: string;
+  data_age: string;
+  data_phone: string;
+  data_email: string;
+  my_social_medias_label: string;
 }
 
 export const Portuguese: StringsData = {
@@ -20,4 +25,9 @@ export const Portuguese: StringsData = {
     "Publicar aplicativos para Android e ios",
     "Fazer uso de styled components para estilização de aplicações react",
   ],
+  my_social_medias_label: "Minhas redes sociais:",
+  data_name: "Nome",
+  data_age: "Idade",
+  data_phone: "Telefone",
+  data_email: "Email",
 };

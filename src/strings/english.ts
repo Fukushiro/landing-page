@@ -16,4 +16,9 @@ export const English: StringsData = {
     "Publish apps for both, android and ios",
     "Use Styled components for React aplications",
   ],
+  my_social_medias_label: "My social media links:",
+  data_name: "Name",
+  data_age: "Age",
+  data_phone: "Phone number",
+  data_email: "Email",
 };

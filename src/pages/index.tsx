@@ -20,6 +20,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { lgMediaMin, mdMediaMin, smMediaMin } from "../utils/screenSize";
 import { useState } from "react";
 import { useLanguage } from "../strings";
+import { Footer } from "../components/Footer";
 export default function Home() {
   const isSmall = useMediaQuery(`(${smMediaMin})`);
   const isMedian = useMediaQuery(`(${mdMediaMin})`);
@@ -71,7 +72,7 @@ export default function Home() {
                 width={animationWidth}
               />
             </WelcomeDiv>
-            <WelcomeSocialMedias>
+            {/* <WelcomeSocialMedias>
               <ul>
                 <li>
                   <a
@@ -84,19 +85,9 @@ export default function Home() {
                     </div>
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="https://www.linkedin.com/in/jo%C3%A3o-pedro-fukushiro-lima-castro-4867091ba/"
-                    target="blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div>
-                      <FaLinkedinIn size={20} />
-                    </div>
-                  </a>
-                </li>
+              
               </ul>
-            </WelcomeSocialMedias>
+            </WelcomeSocialMedias> */}
           </Welcome>
           {/* 
         <About>
@@ -112,25 +103,19 @@ export default function Home() {
             tellus ut urna volutpat posuere quis consectetur quam.
           </p>
         </About> */}
-          <AboutInfos>
+          {/* <AboutInfos>
             <div>
-              <p>Name</p>
+              <p>{strings.data_name}</p>
               <p>João Pedro</p>
             </div>
+
+         
             <div>
-              <p>Age</p>
-              <p>22</p>
-            </div>
-            {/* <div>
-            <p>Address</p>
-            <p>:Rua salvador cirilo sales, Itajuba</p>
-          </div> */}
-            <div>
-              <p>Phone number</p>
+              <p>{strings.data_phone}</p>
               <p>+55 32998360917</p>
             </div>
             <div>
-              <p>Email</p>
+              <p>{strings.data_email}</p>
               <Touchable
                 onClick={() => {
                   navigator.clipboard.writeText("jpflc2301@gmail.com");
@@ -139,7 +124,8 @@ export default function Home() {
                 <p>jpflc2301@gmail.com</p>
               </Touchable>
             </div>
-          </AboutInfos>
+          </AboutInfos> */}
+          <Footer />
         </Global.Content>
       </Container>
     </>
